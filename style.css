@@ -100,6 +100,8 @@
         .image {
             padding-top:85px;
             text-align: center;
+            max-width: 100%;
+            max-height: 100%;
         }
         .image img {
             max-width: 100%;
