@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form with Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General styling for error messages */
+        .error {
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Additional styling to space the error message from input fields */
+        input + .error, select + .error {
+            margin-top: 5px;
+            display: block;
+        }
+    </style>
+    
+    <script src="validation.js"></script>
+</head>
+<body>
+
+    <h2>Simple Form with Validation</h2>
+    <form id="simpleForm">
+        <!-- Name field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span id="nameError" class="error"></span> <!-- Error message styled by class -->
+        <br><br>
+
+        <!-- Email field -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br><br>
+
+        <!-- Password field -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+
+        <!-- Confirm Password field -->
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <span id="passwordError" class="error"></span> <!-- Error message styled by class -->
+        <br><br>
+
+        <!-- MCQ: 2 + 2 -->
+        <h3>Answer this fun question:</h3>
+        <label for="q1">What is 2 + 2?</label>
+        <select id="q1" name="q1">
+            <option value="Sijen">Sijen</option>
+            <option value="22">22</option>
+            <option value="4">4</option>
+            <option value="infinity">Infinity</option>
+        </select>
+        <br><br>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+</body>
+</html>
