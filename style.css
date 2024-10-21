@@ -1,0 +1,154 @@
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: yellow;
+            text-align: center;
+            margin: 0;
+        }
+        footer {
+            padding-bottom:0;
+         }
+
+        ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            justify-content: flex-end; 
+            background-color: black;
+        }
+        ul.info{
+            color:white;
+            list-style: none;
+            display:block;
+            background-color: black;
+            padding-left:40px;
+            }
+    
+        ul.nav li {
+            position: relative;
+        }
+        ul.nav li a {
+            padding: 15px 20px;
+            text-decoration: none;
+            display: inline-block;
+            color: white;
+        }
+        ul.nav li a img {
+            height: 30px; 
+            margin-right: 10px; 
+        }
+        ul.nav li:hover ul.submenu {
+            display: block;
+        }
+        ul.nav ul.submenu {
+            display: none;
+            position: absolute;
+            background-color: purple;
+            min-width: 150px;
+            left: 0;
+            top: 100%;
+        }
+        ul.nav ul.submenu li {
+            display: block;
+        }
+        ul.nav ul.submenu li a {
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        ul.nav ul.submenu li a:hover {
+            background-color: black;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            padding: 10px 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        img.navlogo {
+            height:50px;
+            padding-left: 50px;
+            }
+
+        .intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        h1 .content {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p .content {
+            color: black;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .image {
+            padding-top:85px;
+            text-align: center;
+        }
+        .image img {
+            max-width: 100%;
+            max-height: 100%;
+            height: 550px;
+            width:550px;
+            border-radius:50%;
+        }
+        h1 {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 0px;
+            display: inline-block;
+        }
+        p {
+            color: black;
+            padding: 10px;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 45%;
+            border-radius: 50%;
+            border-width: 10px;
+            border-color: black;
+        }
+        .marquee-text {
+            background-color:black;
+            color:white;
+            padding-bottom:0;
+        }
+        div .footer {
+            background-color:black;
+            padding-bottom:0;
+            }
+        ol.info{
+            color:white;
+            background-color:black;
+}    
+         p.resume{
+             font-size: 25px;
+             }
+          div.cv{
+              background-color:black;
+              color:white; }
+
+           div.art img {
+               height:500px; }
