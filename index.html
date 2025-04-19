@@ -1,58 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sijen Shrestha</title>
-    <link rel="stylesheet" href="style.css">
-      <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
+  <meta charset="UTF-8">
+  <title>Click Game</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f2f2f2;
+      margin-top: 100px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #timer, #counter, #cps {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+
+    button {
+      font-size: 1.5em;
+      padding: 15px 30px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: #6c757d;
+      cursor: default;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-    
-    
-<div>
-    <nav>
-        <div> 
-            <img class="navlogo" src="logo.png" alt="Logo"> 
-        </div>
-        <ul style="font-size:20px" class="nav">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT ME</a></li>
-            <li><a href="writing.html">WRITINGS</a></li>
-            <li><a href="artwork.html">ARTWORKS</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="resume.html">RESUME</a></li>
-            <li><a href="file.html">FILE</a></li>
-        </ul>
-    </nav>
-</div>
 
+  <h1>Sijen ko CPM napne Machine</h1>
+  <div id="timer">Time: 30s</div>
+  <div id="counter">Clicks: 0</div>
+  <button id="clickBtn" onclick="handleClick()">Click Me!</button>
+  <div id="cps"></div>
+  <div id="result"></div>
 
-<div>
-        <div class="intro">
-        <div class="content">
-            <h1>नमस्ते ! म सिजेन श्रेष्ठ ।</h1>
-            
-            <p style="font-size:20px" >I am A Enthusiast Computer Science Student and A Mandala Artist. This is my portfolio. Explore my portfolio to know more about me.</p>
-        </div>
-        <div class="image">
-            <img src="SIJENHOME.jpg" alt="Sijen Shrestha">
-        </div>
-    </div>
-</div>
-    <br>
-    <br>
+  <script>
+    let clicks = 0;
+    let started = false;
+    let startTime;
+    let interval;
+    const duration = 30;
 
-    
-    
-   <div class="footer">
-    <marquee style="font-size:20px"  behavior="scroll" direction="left"> <span class="marquee-text">ㅤㅤTEXT on +977 9813482300 for further details and inquiries.ㅤㅤ</span></marquee>
-        </div>
+    function handleClick() {
+      if (!started) {
+        startGame();
+      }
+      clicks++;
+      document.getElementById("counter").textContent = `Clicks: ${clicks}`;
+    }
 
+    function startGame() {
+      started = true;
+      startTime = Date.now();
+      interval = setInterval(updateTimer, 100);
+      setTimeout(endGame, duration * 1000);
+    }
 
+    function updateTimer() {
+      let elapsed = (Date.now() - startTime) / 1000;
+      let remaining = Math.max(0, duration - elapsed).toFixed(1);
+      document.getElementById("timer").textContent = `Time: ${remaining}s`;
+    }
 
-    
+    function endGame() {
+      clearInterval(interval);
+      document.getElementById("clickBtn").disabled = true;
+      let cps = (clicks / duration).toFixed(2);
+      document.getElementById("cps").textContent = `CPS: ${cps}`;
+      document.getElementById("result").textContent = `You clicked ${clicks} times in 30 seconds.`;
+    }
+  </script>
 
 </body>
 </html>
