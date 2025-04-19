@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Click Game</title>
   <style>
     body {
@@ -9,10 +10,12 @@
       text-align: center;
       background: #f2f2f2;
       margin-top: 100px;
+      padding-bottom: 50px; /* Space for Instagram link */
     }
 
     h1 {
       margin-bottom: 20px;
+      font-size: 2em;
     }
 
     #timer, #counter, #cps {
@@ -28,6 +31,7 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      margin: 20px 0;
     }
 
     button:disabled {
@@ -39,6 +43,60 @@
       margin-top: 20px;
       font-size: 1.2em;
     }
+
+    /* Instagram Link Styling */
+    #instagramLink {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1em;
+      color: #3f729b;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #instagramLink:hover {
+      color: #25d366;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      #timer, #counter, #cps, button {
+        font-size: 1.2em;
+      }
+
+      button {
+        padding: 12px 25px;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.2em;
+      }
+
+      #timer, #counter, #cps, button {
+        font-size: 1em;
+      }
+
+      button {
+        padding: 10px 20px;
+      }
+
+      #instagramLink {
+        font-size: 0.9em;
+        padding: 8px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -49,6 +107,11 @@
   <button id="clickBtn" onclick="handleClick()">Click Me!</button>
   <div id="cps"></div>
   <div id="result"></div>
+
+  <!-- Instagram link -->
+  <a id="instagramLink" href="https://www.instagram.com/kalo_seto_keta" target="_blank">
+    www.instagram.com/kalo_seto_keta/
+  </a>
 
   <script>
     let clicks = 0;
